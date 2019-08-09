@@ -3,16 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BlogAddComponent } from './blog-add/blog-add.component';
+import { BlogGetComponent } from './blog-get/blog-get.component';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
+import { blogService } from './blog.service';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BlogAddComponent,
+    BlogGetComponent,
+    BlogEditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SlimLoadingBarModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [blogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

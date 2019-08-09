@@ -1,0 +1,23 @@
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Blog Title</td>
+        <td>Blog Description</td>
+        <td>Author</td>
+        <td>Author Description</td>
+        
+        
+    </tr>
+    </thead>
+  
+    <tbody>
+        <tr *ngFor="let blog of blogs">
+            <td>{{ blog.BlogTitle }}</td>
+            <td>{{ blog.BlogDescription }}</td>
+            <td>{{ blog.Author }}</td>
+            <td>{{ blog.AuthorDescription }}</td>
+            <td><a [routerLink]="['/edit', blog._id]" class="btn btn-primary">Edit</a></td>
+            <td><a (click) = "deleteblog(blog._id)" class="btn btn-danger">Delete</a>
+        </tr>
+    </tbody>
+  </table>
